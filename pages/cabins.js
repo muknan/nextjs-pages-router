@@ -1,9 +1,10 @@
 import CabinList from "@/components/CabinList";
 import { getCabins } from "@/lib/data-service";
 
+// Statically generated - SSG
 export async function getStaticProps() {
   const cabins = await getCabins();
-  return { props: { cabins } };
+  return { props: { cabins }, revalidate: 3600 };
 }
 
 export default function Cabins({ cabins }) {
