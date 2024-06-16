@@ -1,7 +1,7 @@
-import Image from "next/image";
 import image1 from "@/public/about-1.jpg";
-import image2 from "@/public/about-2.jpg";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -78,12 +78,12 @@ export default function About() {
             </p>
 
             <div>
-              <a
+              <Link
                 href="/cabins"
                 className="inline-block mt-4 bg-primary-450 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-primary-650 transition-all hover:text-primary-900"
               >
                 Explore our luxury cabins
-              </a>
+              </Link>
             </div>
           </div>
         </div>
