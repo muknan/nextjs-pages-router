@@ -8,18 +8,13 @@ export default async function handler(req, res) {
     });
   }
 
-  const contactData = {
-    fullName: "Gojo Satoru",
-    email: "gojo@satoru.com",
-    subject: "booking",
-    message: "Hey!",
-  };
+  const contactData = JSON.parse(req.body);
 
   const { data, error } = await supabase.from("contact").insert([contactData]);
 
   if (error) {
     res.status(500).json({
-      success: fale,
+      success: false,
       message: "Could not your message, please try again!",
     });
   }
